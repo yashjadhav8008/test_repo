@@ -1,0 +1,13 @@
+name: push_and_getdiff
+on: [push]
+
+jobs:
+  wk1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: get_diff
+        run: |
+          echo "You made these changes"
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }}
