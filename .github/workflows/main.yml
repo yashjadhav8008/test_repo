@@ -10,4 +10,4 @@ jobs:
       - name: get_diff
         run: |
           echo "You made these changes"
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }}
+          git diff ${{ github.event.before }} ${{ github.sha }}
